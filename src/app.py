@@ -29,5 +29,5 @@ if "history" not in st.session_state:
 
 st.text_input("", key="input_text", on_change=generate_chat)
 
-for i in range(len(st.session_state.history)-1, -1, -1):
-    st_message(**st.session_state.history[i], key=str(i))
+for i, chat in enumerate(st.session_state.history):
+    st_message(**chat, key=str(i))
